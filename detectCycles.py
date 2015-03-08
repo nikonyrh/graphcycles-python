@@ -18,7 +18,7 @@ def main(argv=[]):
         'csr': lambda A: scipy.sparse.csr_matrix(A)
     }
     
-    results = [';'.join(['#'] + sorted(matrix_types.keys()))]
+    results = [';'.join(['#'] + sorted(matrix_types.keys()) + ['has_cycles'])]
     print results[-1]
     
     for fname in sorted(glob.glob('graphs/*.json')):
