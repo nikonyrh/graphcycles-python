@@ -51,9 +51,11 @@ class Graph:
         j = int(node_name[self.n_chars:(2*self.n_chars)], 16) - 1
         
         result = []
+        
         for di in range(-1,2):
             for dj in range(-1,2):
                 name = self.node_name(i+di, j+dj)
+                
                 if name is not None:
                     result.append(name)
         
@@ -110,15 +112,13 @@ def main(argv=[]):
                 if n_nodes == 0:
                     break
                 
-                i    = random.randint(0, n_nodes-1)
-                node =  nodes[i]
+                node = nodes[rand(n_nodes)]
                 
                 neighbours    = graph.visited_neighbours(node)
                 n_neighbours  = len(neighbours)
                 
                 assert(n_neighbours > 0)
-                j = rand(n_neighbours)
-                graph.link(node, neighbours[j])
+                graph.link(node, neighbours[rand(n_neighbours)])
                 graph.visit(node)
             
             nodes   = graph.all_nodes()
