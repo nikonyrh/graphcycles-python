@@ -87,8 +87,8 @@ class Graph:
 
 
 def main(argv=[]):
-    r       = range(4,100)
-    p       = 3.1559
+    r       = range(4,200)
+    p       = 2.5
     sizes   = [int(0.5 + i**p / r[0]**(p-1)) for i in r]
     n_iter  = 1
     
@@ -97,8 +97,8 @@ def main(argv=[]):
     #print sizes; return
     
     for size in sizes:
-        n_extra_links = int(3 + (0.5*size)**1.5)
-        n_unlinks     = int(1 + (0.1*size)**1.5)
+        n_extra_links = int(3 + (0.5*size)**0.9)
+        n_unlinks     = int(1 + (0.1*size)**0.7)
         
         for iter in range(0,n_iter):
             graph = Graph(size)
